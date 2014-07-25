@@ -1,0 +1,3 @@
+
+describe('summary-view', function(){});
+
