@@ -3,11 +3,21 @@
   "version": "0.0.0",
   "description": "The summary of scorecard and tasks at the frontpage",
   "main": "lib/index.js",
+  "style": "lib/main.css",
   "repository": "git://github.com/bdo-labs/summary-view.git",
   "license": "MIT",
   "atomify": {
     "js": {
-      "entry": "lib/index.js"
+      "entry": "lib/index.js",
+      "output": "build/build.js"
+    },
+    "css": {
+      "entry": "index.css",
+      "output": "build/bundle.css",
+      "assets": {
+        "dest": "build/assets/",
+        "prefix": "assets/"
+      }
     }
   },
   "browserify": {
@@ -21,6 +31,11 @@
     "atomify": "^3.1.2",
     "karma": "^0.12.16",
     "karma-jasmine": "^0.1.5",
-    "partialify": "^3.1.1"
+    "partialify": "^3.1.1",
+    "styles": "git+ssh://git@github.com:bdo-labs/styles.git"
+  },
+  "dependencies": {
+    "services": "git+https://edbdo.visualstudio.com/DefaultCollection/BDO%20Labs/_git/Services",
+    "filters": "git+ssh://git@github.com:bdo-labs/filters.git"
   }
 }
