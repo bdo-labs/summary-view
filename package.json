@@ -1,5 +1,5 @@
 {
-  "name": "summary-view",
+  "name": "task-scorecard-summary-view",
   "version": "0.0.0",
   "description": "The summary of scorecard and tasks at the frontpage",
   "main": "lib/index.js",
