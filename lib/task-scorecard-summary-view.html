@@ -10,7 +10,7 @@
 		<h2><a ui-sref="strategy.scorecard({scorecardId: {{scorecard.id}}})">Målstyring</a></h2>
 		<ul>
 			<li class="category" ng-repeat="category in scorecard.categories | orderBy:'id'">
-				<i class="fa fa-fw status-color {{category.status}} {{category.trend | numToTrend | termToIcon | encircleIcon}}"></i>
+				<i class="fa fa-fw status-color {{category.trend | trendToColor }} {{category.trend | numToTrend | termToIcon | encircleIcon}}"></i>
 				{{category.name}}
 			</li>
 		</ul>
