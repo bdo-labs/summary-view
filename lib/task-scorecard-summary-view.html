@@ -1,13 +1,13 @@
 <section class="primary-box task-scorecard-summary">
 
-	<h1><a ui-sref="strategy.scorecard({scorecardId: {{scorecard.id}}})">{{scorecard.name}}</a></h1>
+	<h1><a ui-sref="strategy.scorecard({scorecardId: '{{scorecard.slug}}'})">{{scorecard.name}}</a></h1>
 
 	<div class="action-button main-action">
 		<i class="fa fa-fw fa-pencil"></i>
 	</div>
 
 	<div class="categories">
-		<h2><a ui-sref="strategy.scorecard({scorecardId: {{scorecard.id}}})">Målstyring</a></h2>
+		<h2><a ui-sref="strategy.scorecard({scorecardId: '{{scorecard.slug}}'})">Målstyring</a></h2>
 		<ul>
 			<li class="category" ng-repeat="category in scorecard.categories | orderBy:'id'">
 				<i class="fa fa-fw status-color {{category.trend | trendToColor }} {{category.trend | numToTrend | termToIcon | encircleIcon}}"></i>
@@ -17,7 +17,7 @@
 	</div>
 
 	<div class="chart-component">
-		<h2><a ui-sref="strategy.tasks({tasksId: {{scorecard.id}}})">Tiltak</a></h2>
+		<h2><a ui-sref="strategy.tasks({tasksId: '{{scorecard.slug}}'})">Tiltak</a></h2>
 		<div class="chart"></div>
 		<div class="description">
 			<span class="status-color good">17</span> / <span class="status-color warning">5</span> / <span class="status-color danger">2</span>
