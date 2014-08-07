@@ -23,15 +23,23 @@
 		float: right;
 		text-align: center;
 
-		.chart {
-			height: 90px;
-			width: 90px;
-  			/**
-   			 * Placeholder div
-   			 */
-   			border: solid 1px black;
-   			border-radius: 50%;
-   			background: #708e50;
+		.pie {
+			height: 100px;
+			.good {
+				fill: $good-color;
+			}
+
+			.medium {
+				fill: $warning-color;
+			}
+
+			.bad {
+				fill: $danger-color;
+			}
+
+			text {
+				text-anchor: middle;
+			}
 		}
 
 		.description {
