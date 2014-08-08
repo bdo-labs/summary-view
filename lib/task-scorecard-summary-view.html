@@ -9,9 +9,9 @@
 	<div class="categories">
 		<h2><a ui-sref="strategy.scorecard({scorecardId: '{{scorecard.slug}}'})">Målstyring</a></h2>
 		<ul>
-			<li class="category" ng-repeat="category in scorecard.categories | orderBy:'id'">
-				<i class="fa fa-fw status-color {{category.status }} {{category.trend | numToTrend | termToIcon | encircleIcon}}"></i>
-				{{category.name}}
+			<li class="category" ng-repeat="group in indicatorGroups | orderBy:'category.id'">
+				<i class="fa fa-fw status-color {{group.status }} {{group.trend | numToTrend | termToIcon | encircleIcon}}"></i>
+				{{group.category.name}}
 			</li>
 		</ul>
 	</div>
