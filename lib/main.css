@@ -25,28 +25,29 @@
 /* line 26, sass/_task-scorecard-summary.scss */
 .task-scorecard-summary .chart-component .pie {
   height: 100px;
+  width: 100px;
 }
-/* line 28, sass/_task-scorecard-summary.scss */
+/* line 29, sass/_task-scorecard-summary.scss */
 .task-scorecard-summary .chart-component .pie .good {
   fill: #708e50;
 }
-/* line 32, sass/_task-scorecard-summary.scss */
+/* line 33, sass/_task-scorecard-summary.scss */
 .task-scorecard-summary .chart-component .pie .medium {
   fill: #d29628;
 }
-/* line 36, sass/_task-scorecard-summary.scss */
+/* line 37, sass/_task-scorecard-summary.scss */
 .task-scorecard-summary .chart-component .pie .bad {
   fill: #ac4139;
 }
-/* line 40, sass/_task-scorecard-summary.scss */
+/* line 41, sass/_task-scorecard-summary.scss */
 .task-scorecard-summary .chart-component .pie text {
   text-anchor: middle;
 }
-/* line 45, sass/_task-scorecard-summary.scss */
+/* line 46, sass/_task-scorecard-summary.scss */
 .task-scorecard-summary .chart-component .description {
   margin-top: 1em;
 }
-/* line 50, sass/_task-scorecard-summary.scss */
+/* line 51, sass/_task-scorecard-summary.scss */
 .task-scorecard-summary .slogan {
   clear: both;
   padding-top: 20px;
