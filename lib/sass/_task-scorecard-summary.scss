@@ -23,6 +23,13 @@
 		float: right;
 		text-align: center;
 
+		@media screen and (max-width: $screen-sm-max) {
+			float: none;
+			clear: left;
+			width: 100px;
+			margin: 0 auto;
+		}
+
 		.pie {
 			height: 100px;
 			width: 100px;
