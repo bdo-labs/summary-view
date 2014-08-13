@@ -7,17 +7,32 @@
 	</div>
 
 	<div class="categories">
-		<h2><a ui-sref="strategy.scorecard({scorecardId: '{{scorecard.slug}}'})">Målstyring</a></h2>
-		<ul>
-			<li class="category" ng-repeat="group in indicatorGroups | orderBy:'category.id'">
-				<i class="fa fa-fw status-color {{group.status }} {{group.trend | numToTrend | termToIcon | encircleIcon}}"></i>
-				{{group.category.name}}
-			</li>
-		</ul>
+		<div ng-repeat="group in indicatorGroups | orderBy:'category.id'" class="category">
+			<table class="row-separated-table">
+				<thead>
+					<tr>
+						<th width="10%">
+							<i class="fa fa-fw status-color {{group.status}} {{group.trend | numToTrend | termToIcon | encircleIcon}}"></i>
+						</th>
+						<th width="70%" class="name" ng-click="expanded=!expanded">{{group.category.name}}</th>
+						<th width="20%" ng-show="expanded">Status</th>
+					</tr>
+				</thead>
+				<tbody ng-show="expanded">
+					<tr data-ng-repeat="indicator in group.indicators | orderBy:'name'">
+						<td>
+							<i class="fa fa-fw status-color {{indicator.status}} {{indicator.trend | numToTrend | termToIcon}}"></i>
+						</td>
+						<td><a ui-sref="strategy.scorecard.indicator({indicatorId: '{{indicator.slug}}'})">{{indicator.name}}</a></td>
+						<td>{{getCurrent(indicator.measurements).value}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</div>
 
 	<div class="chart-component">
-		<h2><a ui-sref="strategy.tasks({tags: '{{scorecard.name}}'})">Tiltak</a></h2>
+		<p><a ui-sref="strategy.tasks({tags: '{{scorecard.name}}'})">Status tiltak:</a></p>
 		<div class="pie" bdo-d3-pie="pieData"></div>
 	</div>
 

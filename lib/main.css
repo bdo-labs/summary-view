@@ -14,16 +14,42 @@
 }
 /* line 16, sass/_task-scorecard-summary.scss */
 .task-scorecard-summary .categories .category {
-  margin-bottom: 10px;
+  width: 300px;
 }
-/* line 21, sass/_task-scorecard-summary.scss */
+/* line 20, sass/_task-scorecard-summary.scss */
+.task-scorecard-summary .categories thead {
+  text-align: left;
+}
+/* line 24, sass/_task-scorecard-summary.scss */
+.task-scorecard-summary .categories th {
+  font-weight: 600;
+}
+/* line 28, sass/_task-scorecard-summary.scss */
+.task-scorecard-summary .categories tr {
+  border: 0;
+}
+/* line 33, sass/_task-scorecard-summary.scss */
+.task-scorecard-summary .categories th:last-child, .task-scorecard-summary .categories td:last-child {
+  color: #c8c8c8;
+}
+/* line 38, sass/_task-scorecard-summary.scss */
+.task-scorecard-summary .categories tbody > tr:last-child {
+  border-bottom: solid transparent 10px;
+  /* Hacky margin */
+}
+/* line 43, sass/_task-scorecard-summary.scss */
 .task-scorecard-summary .chart-component {
-  margin-right: 50px;
+  margin-right: 15px;
   float: right;
   text-align: center;
 }
+/* line 44, sass/_task-scorecard-summary.scss */
+.task-scorecard-summary .chart-component p {
+  margin: 0;
+  padding-top: 8px;
+}
 @media screen and (max-width: 991px) {
-  /* line 21, sass/_task-scorecard-summary.scss */
+  /* line 43, sass/_task-scorecard-summary.scss */
   .task-scorecard-summary .chart-component {
     float: none;
     clear: left;
@@ -31,34 +57,38 @@
     margin: 0 auto;
   }
 }
-/* line 33, sass/_task-scorecard-summary.scss */
+/* line 60, sass/_task-scorecard-summary.scss */
 .task-scorecard-summary .chart-component .pie {
   height: 100px;
   width: 100px;
 }
-/* line 36, sass/_task-scorecard-summary.scss */
+/* line 63, sass/_task-scorecard-summary.scss */
 .task-scorecard-summary .chart-component .pie .good {
   fill: #708e50;
 }
-/* line 40, sass/_task-scorecard-summary.scss */
+/* line 67, sass/_task-scorecard-summary.scss */
 .task-scorecard-summary .chart-component .pie .medium {
   fill: #d29628;
 }
-/* line 44, sass/_task-scorecard-summary.scss */
+/* line 71, sass/_task-scorecard-summary.scss */
 .task-scorecard-summary .chart-component .pie .bad {
   fill: #ac4139;
 }
-/* line 48, sass/_task-scorecard-summary.scss */
+/* line 75, sass/_task-scorecard-summary.scss */
 .task-scorecard-summary .chart-component .pie text {
   text-anchor: middle;
 }
-/* line 53, sass/_task-scorecard-summary.scss */
+/* line 80, sass/_task-scorecard-summary.scss */
 .task-scorecard-summary .chart-component .description {
   margin-top: 1em;
 }
-/* line 58, sass/_task-scorecard-summary.scss */
+/* line 85, sass/_task-scorecard-summary.scss */
 .task-scorecard-summary .slogan {
   clear: both;
   padding-top: 20px;
-  font-size: medium;
+  margin: 0;
+}
+/* line 90, sass/_task-scorecard-summary.scss */
+.task-scorecard-summary .slogan .descriptive-text {
+  font-style: italic;
 }
