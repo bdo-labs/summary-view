@@ -23,7 +23,7 @@
 						<td>
 							<i class="fa fa-fw status-color {{indicator.status}} {{indicator.trend | numToTrend | termToIcon}}"></i>
 						</td>
-						<td><a ui-sref="strategy.scorecard.indicator({indicatorId: '{{indicator.slug}}'})">{{indicator.name}}</a></td>
+						<td><a ui-sref="strategy.scorecard.indicator({scorecardId: '{{scorecard.slug}}', indicatorId: '{{indicator.slug}}'})">{{indicator.name}}</a></td>
 						<td>{{getCurrent(indicator.measurements).value}}</td>
 					</tr>
 				</tbody>
