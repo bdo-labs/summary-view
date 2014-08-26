@@ -1,2 +1,53 @@
-@import "styles";
-@import "./lib/main.css";
+
+@import "bdo-theme.css";
+
+.task-scorecard-summary h1 {
+  text-align: center;
+}
+
+.task-scorecard-summary span {
+  float: right;
+  font-size: .8em;
+  color: lightgrey;
+}
+
+.categories ul:last-of-type {
+  margin-bottom: 2em;
+}
+.categories > ul {
+  border-bottom: 1px solid lightgrey;
+  line-height: 2em;
+}
+.categories > ul ul {
+  font-size: .8em;
+}
+
+.categories,
+aside {
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+  width: 48%;
+}
+
+.scorecard-full .categories {
+  width: 100%;
+}
+
+aside {
+  float: right;
+  text-align: center;
+}
+.chart-component .pie {
+  display: inline-block;
+  height: 7em;
+  width: 7em;
+  text-anchor: middle;
+  fill: lightgrey;
+}
+
+.pie {
+  clear: both;
+}
+
+

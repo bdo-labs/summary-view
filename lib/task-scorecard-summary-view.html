@@ -1,41 +1,39 @@
+
 <section class="primary-box task-scorecard-summary">
 
-	<h1><a ui-sref="strategy.scorecard({scorecardId: '{{scorecard.slug}}'})">{{scorecard.name}}</a></h1>
+  <h1><a ui-sref="strategy.scorecard({scorecardId: '{{scorecard.slug}}'})">{{scorecard.name}}</a></h1>
+  <a class="action-btn action-edit" href="#">
+    <i class="fa fa-fw fa-pencil"></i>
+  </a>
 
-	<div class="action-button main-action">
-		<i class="fa fa-fw fa-pencil"></i>
-	</div>
+  <div class="categories">
+    <ul ng-repeat="group in indicatorGroups | orderBy:'category.id'" class="category">
+      <li>
+        <i class="fa fa-fw status-color {{group.status}} {{group.trend | numToTrend | termToIcon | encircleIcon }}"></i>
+        <a ng-click="expanded=!expanded">{{group.category.name}}</a>
+        <span ng-show="expanded">Status</span>
+        <ul ng-show="expanded" ng-repeat="indicator in group.indicators | orderBy: 'name'">
+          <i class="fa fa-fw status-color {{indicator.status}} {{indicator.trend | numToTrend | termToIcon}}"></i>
+          <a ui-sref="strategy.scorecard.indicator({scorecardId: '{{scorecard.slug}}', indicatorId: '{{indicator.slug}}'})">
+            {{indicator.name}}
+            {{getCurrent(indicator, 'measurements').value | separatedNumber}}
+          </a>
+        </ul>
+      </li>
+    </ul>
+    <a class="flat-btn" ui-sref="strategy.tasks({tags: '{{scorecard.name}}'})">Se alle tiltak</a>
+    <a class="flat-btn" ui-sref="strategy.tasks({tags: '{{scorecard.name}}'})">Se alle Kpi</a>
+  </div>
 
-	<div class="categories">
-		<div ng-repeat="group in indicatorGroups | orderBy:'category.id'" class="category">
-			<table class="row-separated-table">
-				<thead>
-					<tr>
-						<th width="10%">
-							<i class="fa fa-fw status-color {{group.status}} {{group.trend | numToTrend | termToIcon | encircleIcon}}"></i>
-						</th>
-						<th width="70%" class="name" ng-click="expanded=!expanded">{{group.category.name}}</th>
-						<th width="20%" ng-show="expanded">Status</th>
-					</tr>
-				</thead>
-				<tbody ng-show="expanded">
-					<tr data-ng-repeat="indicator in group.indicators | orderBy:'name'">
-						<td>
-							<i class="fa fa-fw status-color {{indicator.status}} {{indicator.trend | numToTrend | termToIcon}}"></i>
-						</td>
-						<td><a ui-sref="strategy.scorecard.indicator({scorecardId: '{{scorecard.slug}}', indicatorId: '{{indicator.slug}}'})">{{indicator.name}}</a></td>
-						<td>{{getCurrent(indicator.measurements).value}}</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-
-	<div class="chart-component">
-		<p><a ui-sref="strategy.tasks({tags: '{{scorecard.name}}'})">Status tiltak:</a></p>
-		<div class="pie" bdo-d3-pie="pieData"></div>
-	</div>
-
-	<p class="slogan descriptive-text">{{scorecard.description}}</p>
+  <aside>
+    <a ui-sref="strategy.tasks({tags: '{{scorecard.name}}'})">Status tiltak:</a>
+    <div class="chart-component">
+      <div class="pie" bdo-d3-pie="pieData"></div>
+    </div>
+    <p class="description">
+      <i>{{scorecard.description}}</i>
+    </p>
+  </aside>
 
 </section>
+

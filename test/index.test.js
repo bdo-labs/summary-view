@@ -1,3 +1,0 @@
-
-describe('summary-view', function(){});
-
